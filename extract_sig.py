@@ -11,6 +11,10 @@ from pathlib import Path
 #Extract sequences
 N_CPU = joblib.cpu_count()
 def extract_sequences():
+    """
+    function to extract the train/test points, train/test_inputs, train/test_targets
+    #note just put these together since its a generative model
+    """
     N_CPU = joblib.cpu_count()
     train_points, train_inputs, train_targets = MNIST_funcs.mnist_train_data("seq_MNIST", N_CPU)
     test_points, test_inputs, test_targets = MNIST_funcs.mnist_test_data("seq_MNIST", N_CPU)
@@ -18,6 +22,10 @@ def extract_sequences():
 
 #Write into textfiles
 def write_to_text(input_list):
+    """
+    function to put extracted list into textfile for future use
+    :param input_list: list to put in textfile
+    """
     content = '\n'.join(str(i) for i in input_list)
     p = Path('./Data/')
     p.mkdir(exist_ok=True)
