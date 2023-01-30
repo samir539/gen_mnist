@@ -9,7 +9,7 @@ seq_MNIST_path = "seq_MNIST" #local path to store the data
 
 def get_seq_MNIST(seq_MNIST_host_path = host_path, loc_path = seq_MNIST_path):
     if os.path.exists(seq_MNIST_path):
-        pass
+        return None
     else:
         os.makedirs(seq_MNIST_path,exist_ok=True)
         tgz_file = "seq_MNIST.tgz"
